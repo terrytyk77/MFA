@@ -34,6 +34,7 @@ public class Login {
         else{
             System.out.println("Wrong Username!");
         }
+        System.out.println();
         return false;
     }
 }

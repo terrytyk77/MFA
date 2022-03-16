@@ -13,7 +13,7 @@ public class Main {
         do {
             String userName = scan("Enter username:");  // Read user input
             String password = scan("Enter password:");  // Read user input
-            MfaInterface mfaAuthentication = null;
+            MfaInterface mfaAuthentication;
 
             String authMethod = Main.scan("Choose Authentication Method: \"1\" for Mobile, \"2\" for Email or \"3\" for Application");  // Read user input
             switch (authMethod){
