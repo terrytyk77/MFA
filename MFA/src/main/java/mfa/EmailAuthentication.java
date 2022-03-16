@@ -3,7 +3,7 @@ package mfa;
 public class EmailAuthentication implements MfaInterface{
 
     @Override
-    public Boolean Authenticate(boolean authenticate) {
+    public Boolean authenticate(boolean authenticate) {
         if(authenticate)
             System.out.println("Authenticated by Email Successful");
         else

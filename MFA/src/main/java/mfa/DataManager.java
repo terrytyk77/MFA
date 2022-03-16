@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public final class DataManager {
 
-    private static final HashMap<String,String> loginInfo = new HashMap<String,String>();
+    private static final HashMap<String,String> loginInfo = new HashMap<>();
     private static final DataManager INSTANCE = new DataManager();
 
     private DataManager(){

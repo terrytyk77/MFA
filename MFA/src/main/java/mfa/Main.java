@@ -1,7 +1,5 @@
 package mfa;
 
-import com.oracle.tools.packager.Log;
-
 import java.util.Scanner;
 
 /**
@@ -15,15 +13,18 @@ public class Main {
         do {
             String userName = scan("Enter username:");  // Read user input
             String password = scan("Enter password:");  // Read user input
-            MfaInterface mfaAuthentication;
+            MfaInterface mfaAuthentication = null;
 
-            String authMethod = Main.scan("Choose Auth Method: \"1\" for Mobile \"2\" for Email");  // Read user input
+            String authMethod = Main.scan("Choose Authentication Method: \"1\" for Mobile, \"2\" for Email or \"3\" for Application");  // Read user input
             switch (authMethod){
                 case "1":
                     mfaAuthentication = new MobileAuthentication();
                     break;
-                default:
+                case "2":
                     mfaAuthentication = new EmailAuthentication();
+                    break;
+                default:
+                    mfaAuthentication = new ApplicationAuthentication();
                     break;
             }
 

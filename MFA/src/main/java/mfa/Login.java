@@ -17,10 +17,10 @@ public class Login {
 
     public boolean authenticate() throws InterruptedException {
         System.out.println("Authenticating...");
-        TimeUnit.SECONDS.sleep(1);
+        TimeUnit.SECONDS.sleep(2);
         if(this.dataManager.getUser(this.name)){
             if(this.dataManager.confirmUserPassword(this.name, this.password)) {
-                if(this.mfaAuthentication.Authenticate(true)) {
+                if(this.mfaAuthentication.authenticate(true)) {
                     System.out.println(this.name + " Logged in Successfully!");
                     return true;
                 }
