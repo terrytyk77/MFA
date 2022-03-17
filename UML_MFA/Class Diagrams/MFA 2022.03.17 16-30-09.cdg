@@ -2,38 +2,33 @@
 
 <ClassDiagram name="MFA">
   <ClassDiagramComponents>
-    <Class name="AuthenticationApplication" package="mfa.controllers" visibility="public" xPosition="20.0" yPosition="20.0">
+    <Class name="AuthenticationApplication" package="mfa.controllers" visibility="public" xPosition="965.0" yPosition="685.0">
       <Fields/>
       <Constructors/>
       <Methods>
         <Method name="authenticate" returnType="Boolean" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="AuthenticationEmail" package="mfa.controllers" visibility="public" xPosition="320.0" yPosition="20.0">
+    <Class name="AuthenticationEmail" package="mfa.controllers" visibility="public" xPosition="1188.0" yPosition="685.0">
       <Fields/>
       <Constructors/>
       <Methods>
         <Method name="authenticate" returnType="Boolean" visibility="public"/>
       </Methods>
     </Class>
-    <Interface name="AuthenticationInterface" package="mfa.controllers" visibility="public" xPosition="620.0" yPosition="20.0">
-      <Methods>
-        <Method name="authenticate" returnType="Boolean" visibility="package"/>
-      </Methods>
-    </Interface>
-    <Class name="AuthenticationMobile" package="mfa.controllers" visibility="public" xPosition="920.0" yPosition="20.0">
+    <Class name="AuthenticationMobile" package="mfa.controllers" visibility="public" xPosition="772.0" yPosition="685.0">
       <Fields/>
       <Constructors/>
       <Methods>
         <Method name="authenticate" returnType="Boolean" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="LoginService" package="mfa.controllers" visibility="public" xPosition="1220.0" yPosition="20.0">
+    <Class name="LoginService" package="mfa.controllers" visibility="public" xPosition="403.0" yPosition="310.0">
       <Fields>
         <Field name="dataManager" type="DataManager" visibility="private" isFinal="true"/>
         <Field name="name" type="String" visibility="private" isFinal="true"/>
         <Field name="password" type="String" visibility="private" isFinal="true"/>
-        <Field name="mfaAuthentication" type="AuthenticationInterface" visibility="private"/>
+        <Field name="authenticationMethod" type="AuthenticationInterface" visibility="private"/>
       </Fields>
       <Constructors>
         <Constructor visibility="public">
@@ -44,12 +39,12 @@
       <Methods>
         <Method name="getAuthenticationMethod" returnType="AuthenticationInterface" visibility="public"/>
         <Method name="setAuthenticationMethod" returnType="void" visibility="public">
-          <Argument type="AuthenticationInterface" name="mfaAuthentication"/>
+          <Argument type="AuthenticationInterface" name="authenticationMethod"/>
         </Method>
         <Method name="loginAttempt" returnType="boolean" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Main" package="mfa" visibility="public" xPosition="1520.0" yPosition="20.0">
+    <Class name="Main" package="mfa" visibility="public" xPosition="20.0" yPosition="20.0">
       <Fields/>
       <Constructors/>
       <Methods>
@@ -58,7 +53,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="DataManager" package="mfa.models" visibility="public" isFinal="true" xPosition="1820.0" yPosition="20.0">
+    <Class name="DataManager" package="mfa.models" visibility="public" isFinal="true" xPosition="437.0" yPosition="20.0">
       <Fields>
         <Field name="loginInfo" type="HashMap&lt;String, String&gt;" visibility="private" isStatic="true" isFinal="true"/>
         <Field name="INSTANCE" type="DataManager" visibility="private" isStatic="true" isFinal="true"/>
@@ -77,7 +72,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="Utility" package="mfa.utils" visibility="public" xPosition="2120.0" yPosition="20.0">
+    <Class name="Utility" package="mfa.utils" visibility="public" xPosition="20.0" yPosition="151.0">
       <Fields>
         <Field name="scanner" type="Scanner" visibility="private" isStatic="true" isFinal="true"/>
       </Fields>
@@ -95,7 +90,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="LoginPage" package="mfa.views" visibility="public" xPosition="20.0" yPosition="420.0">
+    <Class name="LoginPage" package="mfa.views" visibility="public" xPosition="20.0" yPosition="357.0">
       <Fields>
         <Field name="login" type="LoginService" visibility="private"/>
       </Fields>
@@ -105,16 +100,21 @@
         <Method name="userChooseAuthenticationMethod" returnType="void" visibility="private"/>
       </Methods>
     </Class>
+    <Interface name="AuthenticationInterface" package="mfa.controllers" visibility="public" xPosition="971.0" yPosition="382.0">
+      <Methods>
+        <Method name="authenticate" returnType="Boolean" visibility="package"/>
+      </Methods>
+    </Interface>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
-    <HasRelation name="INSTANCE" source="mfa.models.DataManager" target="mfa.models.DataManager" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="mfa.controllers.LoginService" target="mfa.controllers.AuthenticationInterface" sourceCardinality="1..1" targetCardinality="1..1"/>
     <UseRelation source="mfa.models.DataManager" target="mfa.models.DataManager" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="mfa.controllers.AuthenticationApplication" target="mfa.controllers.AuthenticationInterface"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="mfa.controllers.AuthenticationMobile" target="mfa.controllers.AuthenticationInterface"/>
-    <HasRelation name="login" source="mfa.views.LoginPage" target="mfa.controllers.LoginService" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="mfaAuthentication" source="mfa.controllers.LoginService" target="mfa.controllers.AuthenticationInterface" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="INSTANCE" source="mfa.models.DataManager" target="mfa.models.DataManager" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="authenticationMethod" source="mfa.controllers.LoginService" target="mfa.controllers.AuthenticationInterface" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
     <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="mfa.controllers.AuthenticationEmail" target="mfa.controllers.AuthenticationInterface"/>
+    <HasRelation name="login" source="mfa.views.LoginPage" target="mfa.controllers.LoginService" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="dataManager" source="mfa.controllers.LoginService" target="mfa.models.DataManager" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="mfa.controllers.LoginService" target="mfa.controllers.AuthenticationInterface" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="mfa.controllers.AuthenticationMobile" target="mfa.controllers.AuthenticationInterface"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="mfa.controllers.AuthenticationApplication" target="mfa.controllers.AuthenticationInterface"/>
   </ClassDiagramRelations>
 </ClassDiagram>

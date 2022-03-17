@@ -7,7 +7,7 @@ public final class DataManager {
     private static final HashMap<String,String> loginInfo = new HashMap<>();
     private static final DataManager INSTANCE = new DataManager();
 
-    private DataManager(){
+    private  DataManager(){
         // Populating the database
         loginInfo.put("Terry", "12345");
         loginInfo.put("Ali", "Apple12");
@@ -23,6 +23,7 @@ public final class DataManager {
     }
 
     public boolean confirmUserPassword(String name,String password){
+        if(!getUser(name)) return false;
         return loginInfo.get(name).equals(password);
     }
 }
