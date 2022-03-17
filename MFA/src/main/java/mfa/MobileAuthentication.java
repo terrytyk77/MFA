@@ -12,11 +12,11 @@ public class MobileAuthentication implements MfaInterface{
         String confirmation = Utility.scan("Calculate: " + randomNumber1 + " + " + randomNumber2 + " to confirm it's you");
 
         if(String.valueOf(result).equals(confirmation)){
-            System.out.println("Authenticated by Mobile Successful");
+            Utility.print("Authenticated by Mobile Successful");
             return true;
         }
 
-        System.out.println("Authenticated by Mobile Failed");
+        Utility.print("Authenticated by Mobile Failed");
         return false;
     }
 }

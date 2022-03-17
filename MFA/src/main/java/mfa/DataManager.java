@@ -19,11 +19,12 @@ public final class DataManager {
 
     public boolean createUser(String name, String password){
         if(getUser(name)){
-            System.out.println("Username already taken!");
+            Utility.print("Username already taken!");
             return false;
         }
 
         loginInfo.put(name, password);
+        Utility.print("User created!");
         return true;
     }
 

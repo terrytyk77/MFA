@@ -11,11 +11,11 @@ public class EmailAuthentication implements MfaInterface{
         String confirmation = Utility.scan("Write down the code sent: " + result + " to confirm it's you");
 
         if(result.equals(confirmation)){
-            System.out.println("Authenticated by Email Successful");
+            Utility.print("Authenticated by Email Successful");
             return true;
         }
 
-        System.out.println("Authenticated by Email Failed");
+        Utility.print("Authenticated by Email Failed");
         return false;
     }
 }

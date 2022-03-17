@@ -33,32 +33,32 @@ public class Login {
         }
 
         if(this.mfaAuthentication == null){
-            System.out.println("Option Unavailable! \n");
+            Utility.print("Option Unavailable! \n");
             this.setMfaInterface();
         }
     }
 
     public boolean authenticate() throws InterruptedException {
-        System.out.println("Authenticating...");
+        Utility.print("Authenticating...");
         TimeUnit.SECONDS.sleep(2);
         if(this.dataManager.getUser(this.name)){
             if(this.dataManager.confirmUserPassword(this.name, this.password)) {
                 this.setMfaInterface();
                 if(this.mfaAuthentication.authenticate()) {
-                    System.out.println(this.name + " Logged in Successfully!");
+                    Utility.print(this.name + " Logged in Successfully!");
                     return true;
                 }
                 else
-                    System.out.println("Login Denied!");
+                    Utility.print("Login Denied!");
             }
             else{
-                System.out.println("Wrong Password!");
+                Utility.print("Wrong Password!");
             }
         }
         else{
-            System.out.println("Wrong Username!");
+            Utility.print("Wrong Username!");
         }
-        System.out.println();
+        Utility.print("");
         return false;
     }
 }
