@@ -8,6 +8,7 @@ public final class DataManager {
     private static final DataManager INSTANCE = new DataManager();
 
     private DataManager(){
+        // Populating the database
         loginInfo.put("Terry", "12345");
         loginInfo.put("Ali", "Apple12");
         loginInfo.put("John", "Pizza");

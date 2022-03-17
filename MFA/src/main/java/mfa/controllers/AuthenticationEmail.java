@@ -11,14 +11,14 @@ public class AuthenticationEmail implements AuthenticationInterface {
         String result = "G-" + randomNumber;
 
         Utility.sendCode("Email_Authentication.txt", "Your Code is: " + result);
-        String confirmation = Utility.scan("Write down the code sent to confirm it's you:");
+        String confirmation = Utility.scan("Please, write down the security code that was sent to your email confirm it's you");
 
         if(result.equals(confirmation)){
-            Utility.println("Authenticated by Email Successful");
+            Utility.println("Authenticated by Email Successful!");
             return true;
         }
 
-        Utility.println("Authenticated by Email Failed");
+        Utility.println("Authenticated by Email Failed!");
         return false;
     }
 }

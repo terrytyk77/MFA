@@ -44,7 +44,6 @@ public class LoginService {
         else{
             Utility.println("Wrong Username!");
         }
-        Utility.println("");
         return false;
     }
 }

@@ -10,14 +10,14 @@ public class AuthenticationApplication implements AuthenticationInterface {
         int randomNumber1 = new Random().nextInt(10);
         int randomNumber2 = new Random().nextInt(10);
         int result = randomNumber1 + randomNumber2;
-        String confirmation = Utility.scan("Calculate: " + randomNumber1 + " + " + randomNumber2 + " to confirm it's you");
+        String confirmation = Utility.scan("Please, calculate: " + randomNumber1 + " + " + randomNumber2 + " to confirm it's you");
 
         if(String.valueOf(result).equals(confirmation)){
-            Utility.println("Authenticated by Application Successful");
+            Utility.println("Authenticated by Application Successful!");
             return true;
         }
 
-        Utility.println("Authenticated by Application Failed");
+        Utility.println("Authenticated by Application Failed!");
         return false;
     }
 }

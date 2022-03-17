@@ -11,8 +11,9 @@ public class LoginPage{
 
     public void main() throws InterruptedException {
         do {
-            String userName = Utility.scan("Enter username:");
-            String password = Utility.scan("Enter password:");
+            Utility.println("\n#~#~#~# Welcome to Bradford IT! #~#~#~#");
+            String userName = Utility.scan("Username:");
+            String password = Utility.scan("Password:");
 
             login = new LoginService(userName, password);
             userChooseAuthenticationMethod();
@@ -20,7 +21,10 @@ public class LoginPage{
     }
 
     private void userChooseAuthenticationMethod(){
-        String authMethod = Utility.scan("Choose Authentication Method: \"1\" for Mobile, \"2\" for Email or \"3\" for Application");  // Read user input
+        String authMethod = Utility.scan("Please, Select An Authentication Method:\n" +
+                "1 - Mobile \n" +
+                "2 - Email \n" +
+                "3 - Application");  // Read user input
 
         switch (authMethod){
             case "1":
