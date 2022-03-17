@@ -1,8 +1,9 @@
-package mfa;
+package mfa.controllers;
 
+import mfa.utils.Utility;
 import java.util.Random;
 
-public class MobileAuthentication implements MfaInterface{
+public class AuthenticationApplication implements AuthenticationInterface {
 
     @Override
     public Boolean authenticate() {
@@ -12,11 +13,11 @@ public class MobileAuthentication implements MfaInterface{
         String confirmation = Utility.scan("Calculate: " + randomNumber1 + " + " + randomNumber2 + " to confirm it's you");
 
         if(String.valueOf(result).equals(confirmation)){
-            Utility.print("Authenticated by Mobile Successful");
+            Utility.println("Authenticated by Application Successful");
             return true;
         }
 
-        Utility.print("Authenticated by Mobile Failed");
+        Utility.println("Authenticated by Application Failed");
         return false;
     }
 }

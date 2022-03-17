@@ -1,4 +1,4 @@
-package mfa;
+package mfa.models;
 
 import java.util.HashMap;
 
@@ -15,17 +15,6 @@ public final class DataManager {
 
     public static DataManager getInstance(){
         return INSTANCE;
-    }
-
-    public boolean createUser(String name, String password){
-        if(getUser(name)){
-            Utility.print("Username already taken!");
-            return false;
-        }
-
-        loginInfo.put(name, password);
-        Utility.print("User created!");
-        return true;
     }
 
     public boolean getUser(String name){
