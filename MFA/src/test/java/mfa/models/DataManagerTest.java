@@ -5,12 +5,14 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
  *
- * @author Darkness
+ * @author Terry Keyrouz
  */
 public class DataManagerTest {
     
@@ -37,76 +39,22 @@ public class DataManagerTest {
     }
 
     /**
-     * Test of getInstance method, of class DataManager.
-     */
-    @Test
-    public void testGetInstance() {
-        System.out.println("getInstance");
-        DataManager result = DataManager.getInstance();
-        assertEquals(instance, result);
-    }
-
-    /**
      * Test of getUser method, of class DataManager.
      */
-    @Test
-    public void testGetUser1() {
-        System.out.println("getUser");
-        String name = "Joe"; // Doesn't exist
-        boolean expResult = false;
+    @ParameterizedTest
+    @CsvSource({"Terry, true", "Tom, false", "terry, false", "Ali, true"})
+    public void testGetUser(String name, Boolean expectedResult) {
         boolean result = instance.getUser(name);
-        assertEquals(expResult, result);
-    }
-    
-    /**
-     * Test of getUser method, of class DataManager.
-     */
-    @Test
-    public void testGetUser2() {
-        System.out.println("getUser");
-        String name = "Terry"; // Exists
-        boolean expResult = true;
-        boolean result = instance.getUser(name);
-        assertEquals(expResult, result);
+        assertEquals(expectedResult, result);
     }
 
     /**
      * Test of confirmUserPassword method, of class DataManager.
      */
-    @Test
-    public void testConfirmUserPassword1() {
-        System.out.println("confirmUserPassword");
-        String name = "Terry"; // Exist
-        String password = "12345"; // Correct pass
-        boolean expResult = true;
+    @ParameterizedTest
+    @CsvSource({"Terry, 12345, true", "Tom, 12345, false", " No, No, false", "Ali, Apple13, false"})
+    public void testConfirmUserPassword(String name, String password, boolean expectedResult) {
         boolean result = instance.confirmUserPassword(name, password);
-        assertEquals(expResult, result);
+        assertEquals(expectedResult, result);
     }
-    
-    /**
-     * Test of confirmUserPassword method, of class DataManager.
-     */
-    @Test
-    public void testConfirmUserPassword2() {
-        System.out.println("confirmUserPassword");
-        String name = "Joe"; //Doesn't exist
-        String password = "";
-        boolean expResult = false;
-        boolean result = instance.confirmUserPassword(name, password);
-        assertEquals(expResult, result);
-    }
-    
-    /**
-     * Test of confirmUserPassword method, of class DataManager.
-     */
-    @Test
-    public void testConfirmUserPassword3() {
-        System.out.println("confirmUserPassword");
-        String name = "Terry"; //Exists
-        String password = ""; // Wrong pass
-        boolean expResult = false;
-        boolean result = instance.confirmUserPassword(name, password);
-        assertEquals(expResult, result);
-    }
-    
 }

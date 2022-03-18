@@ -1,10 +1,13 @@
 package mfa.controllers;
 
 import org.junit.jupiter.api.*;
-
 import java.io.ByteArrayInputStream;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+/**
+ *
+ * @author Terry Keyrouz
+ */
 
 public class AuthenticationEmailTest {
     public AuthenticationEmailTest() {
