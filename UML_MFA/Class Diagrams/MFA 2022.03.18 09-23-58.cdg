@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="MFA">
+  <ClassDiagramComponents>
+    <Class name="AuthenticationApplication" package="mfa.controllers" visibility="public" xPosition="1102.0" yPosition="680.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="authenticate" returnType="Boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="AuthenticationEmail" package="mfa.controllers" visibility="public" xPosition="904.0" yPosition="680.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="authenticate" returnType="Boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="AuthenticationMobile" package="mfa.controllers" visibility="public" xPosition="1326.0" yPosition="680.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="authenticate" returnType="Boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="LoginService" package="mfa.controllers" visibility="public" xPosition="488.0" yPosition="323.0">
+      <Fields>
+        <Field name="dataManager" type="DataManager" visibility="private" isFinal="true"/>
+        <Field name="name" type="String" visibility="private" isFinal="true"/>
+        <Field name="password" type="String" visibility="private" isFinal="true"/>
+        <Field name="authenticationMethod" type="AuthenticationInterface" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="password"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getAuthenticationMethod" returnType="AuthenticationInterface" visibility="public"/>
+        <Method name="setAuthenticationMethod" returnType="void" visibility="public">
+          <Argument type="AuthenticationInterface" name="mfaAuthentication"/>
+        </Method>
+        <Method name="loginAttempt" returnType="boolean" visibility="public"/>
+        <Method name="multipleFactorAuthentication" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Main" package="mfa" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="DataManager" package="mfa.models" visibility="public" isFinal="true" xPosition="513.0" yPosition="32.0">
+      <Fields>
+        <Field name="loginInfo" type="HashMap&lt;String, String&gt;" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="INSTANCE" type="DataManager" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="getInstance" returnType="DataManager" visibility="public" isStatic="true"/>
+        <Method name="getUser" returnType="boolean" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="confirmUserPassword" returnType="boolean" visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="password"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Utility" package="mfa.utils" visibility="public" xPosition="20.0" yPosition="160.0">
+      <Fields>
+        <Field name="scanner" type="Scanner" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="scan" returnType="String" visibility="public" isStatic="true">
+          <Argument type="String" name="message"/>
+        </Method>
+        <Method name="println" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="message"/>
+        </Method>
+        <Method name="sendCode" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="fileName"/>
+          <Argument type="String" name="content"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="LoginPage" package="mfa.views" visibility="public" xPosition="20.0" yPosition="371.0">
+      <Fields>
+        <Field name="login" type="LoginService" visibility="private"/>
+        <Field name="restart" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public"/>
+        <Method name="userChooseAuthenticationMethod" returnType="void" visibility="private"/>
+      </Methods>
+    </Class>
+    <Interface name="AuthenticationInterface" package="mfa.controllers" visibility="public" xPosition="1108.0" yPosition="381.0">
+      <Methods>
+        <Method name="authenticate" returnType="Boolean" visibility="package"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="mfa.controllers.AuthenticationEmail" target="mfa.controllers.AuthenticationInterface"/>
+    <HasRelation name="INSTANCE" source="mfa.models.DataManager" target="mfa.models.DataManager" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="mfa.models.DataManager" target="mfa.models.DataManager" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="login" source="mfa.views.LoginPage" target="mfa.controllers.LoginService" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="dataManager" source="mfa.controllers.LoginService" target="mfa.models.DataManager" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="authenticationMethod" source="mfa.controllers.LoginService" target="mfa.controllers.AuthenticationInterface" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="mfa.controllers.LoginService" target="mfa.controllers.AuthenticationInterface" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="mfa.controllers.AuthenticationApplication" target="mfa.controllers.AuthenticationInterface"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="mfa.controllers.AuthenticationMobile" target="mfa.controllers.AuthenticationInterface"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
