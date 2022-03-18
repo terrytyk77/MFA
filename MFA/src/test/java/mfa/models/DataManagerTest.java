@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit5TestClass.java to edit this template
- */
+
 package mfa.models;
 
 import org.junit.jupiter.api.AfterEach;
@@ -45,9 +42,8 @@ public class DataManagerTest {
     @Test
     public void testGetInstance() {
         System.out.println("getInstance");
-        DataManager expResult = instance;
         DataManager result = DataManager.getInstance();
-        assertEquals(expResult, result);
+        assertEquals(instance, result);
     }
 
     /**
