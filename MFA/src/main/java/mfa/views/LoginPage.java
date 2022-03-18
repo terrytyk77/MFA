@@ -9,7 +9,7 @@ import mfa.utils.Utility;
 public class LoginPage{
     private LoginService login;
 
-    public void main(){
+    public void main() throws InterruptedException {
         do {
             // Output -- Starting the application and grabbing the inputs of the user
             Utility.println("\n#~#~#~# Welcome to Bradford IT! #~#~#~#");
@@ -21,12 +21,8 @@ public class LoginPage{
         }while (!login.loginAttempt());
     }
 
-    public void AuthenticationUI(){
-        userChooseAuthenticationMethod();
-    }
-
     // Ask the user which method of authentication he wants to use
-    private void userChooseAuthenticationMethod(){
+    public void userChooseAuthenticationMethod(){
         String authMethod = Utility.scan("Please, Select An Authentication Method:\n" +
                 "1 - Mobile \n" +
                 "2 - Email \n" +

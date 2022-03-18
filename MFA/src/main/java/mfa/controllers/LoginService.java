@@ -4,6 +4,8 @@ import mfa.models.DataManager;
 import mfa.utils.Utility;
 import mfa.views.LoginPage;
 
+import java.util.concurrent.TimeUnit;
+
 public class LoginService {
     private final DataManager dataManager;
     private final String name;
@@ -35,11 +37,13 @@ public class LoginService {
      from the chosen authenticationMethod chosen by the user, by calling
      it's implemented interface
      */
-    public boolean loginAttempt() {
+    public boolean loginAttempt() throws InterruptedException {
         Utility.println("Authenticating...");
         if(this.dataManager.getUser(this.name)){
             if(this.dataManager.confirmUserPassword(this.name, this.password)) {
-                this.loginPage.AuthenticationUI();
+                //Simulate Network Delay
+                TimeUnit.SECONDS.sleep(1);
+                this.loginPage.userChooseAuthenticationMethod();
                 if(this.authenticationMethod.authenticate()) {
                     Utility.println(this.name + " Logged in Successfully!");
                     return true;

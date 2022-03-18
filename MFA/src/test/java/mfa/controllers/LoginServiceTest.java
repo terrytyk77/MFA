@@ -60,7 +60,7 @@ public class LoginServiceTest {
      * Test of loginAttempt method, of class LoginService.
      */
     @Test
-    public void testLoginAttempt(){
+    public void testLoginAttempt() throws InterruptedException {
         AuthenticationInterface auth = new AuthenticationMobile();
         loginService.setAuthenticationMethod(auth);
         in = new ByteArrayInputStream("33".getBytes());
@@ -72,7 +72,7 @@ public class LoginServiceTest {
      * Test of loginAttempt method, of class LoginService.
      */
     @Test
-    public void testLoginAttempt2(){
+    public void testLoginAttempt2() throws InterruptedException {
         loginService = new LoginService("Terry", "12345");
         AuthenticationInterface auth1 = new AuthenticationApplication();
         loginService.setAuthenticationMethod(auth1);
@@ -86,7 +86,7 @@ public class LoginServiceTest {
 //     * Test of loginAttempt method, of class LoginService.
 //     */
     @Test
-    public void testLoginAttempt3(){
+    public void testLoginAttempt3() throws InterruptedException {
         loginService = new LoginService("Terry", "12345");
         AuthenticationInterface auth2 = new AuthenticationEmail();
         loginService.setAuthenticationMethod(auth2);
@@ -99,7 +99,7 @@ public class LoginServiceTest {
      * Test of loginAttempt method, of class LoginService.
      */
     @Test
-    public void testLoginAttempt4(){
+    public void testLoginAttempt4() throws InterruptedException {
         loginService = new LoginService("", "12345");
         AuthenticationInterface auth = new AuthenticationEmail();
         loginService.setAuthenticationMethod(auth);
@@ -112,7 +112,7 @@ public class LoginServiceTest {
      * Test of loginAttempt method, of class LoginService.
      */
     @Test
-    public void testLoginAttempt5(){
+    public void testLoginAttempt5() throws InterruptedException {
         loginService = new LoginService("", "12345");
         AuthenticationInterface auth = new AuthenticationEmail();
         loginService.setAuthenticationMethod(auth);
