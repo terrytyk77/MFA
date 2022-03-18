@@ -19,8 +19,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author Terry Keyrouz
  */
 public class LoginPageTest {
-    private LoginService loginService;
-    
+    LoginPage loginPage = new LoginPage();
     public LoginPageTest() {
     }
     
@@ -44,7 +43,7 @@ public class LoginPageTest {
      * Test of main method, of class LoginPage.
      */
     @Test
-    public void testMain(){
+    public void testMain() throws InterruptedException {
         String Input =  "Terry"
                         + System.getProperty("line.separator")
                         + "12345"
@@ -55,7 +54,6 @@ public class LoginPageTest {
                         + System.getProperty("line.separator");
         ByteArrayInputStream in = new ByteArrayInputStream(Input.getBytes());
         System.setIn(in);
-        //instance.main();
     }
     
 }

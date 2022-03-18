@@ -13,11 +13,9 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author Terry Keyrouz   
  */
 public class LoginServiceTest {
-    private ByteArrayInputStream in;
     private LoginService loginService;
     
     public LoginServiceTest() {
-        loginService = new LoginService("Terry", "12345");
     }
     
     @BeforeAll
@@ -41,7 +39,7 @@ public class LoginServiceTest {
      */
     @Test
     public void testGetAuthenticationMethod() {
-        System.out.println("getAuthenticationMethod");
+        loginService = new LoginService("Terry", "12345");
         assertNull(loginService.getAuthenticationMethod());
     }
 
@@ -49,11 +47,63 @@ public class LoginServiceTest {
      * Test of setAuthenticationMethod method, of class LoginService.
      */
     @Test
-    public void testSetAuthenticationMethod() {
-        System.out.println("setAuthenticationMethod");
-        AuthenticationMobile auth = new AuthenticationMobile();
-        loginService.setAuthenticationMethod(auth);
-        assertEquals(loginService.getAuthenticationMethod(), auth);
+    public void testSetAuthenticationMethod1() {
+        loginService = new LoginService("Terry", "12345");
+        AuthenticationInterface instance = new AuthenticationMobile();
+        loginService.setAuthenticationMethod(instance);
+
+        String Input =  "5"
+                        + System.getProperty("line.separator");
+        ByteArrayInputStream in = new ByteArrayInputStream(Input.getBytes());
+        System.setIn(in);
+
+
+        Boolean expResult = false;
+        Boolean result = loginService.multipleFactorAuthentication();
+
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of setAuthenticationMethod method, of class LoginService.
+     */
+    @Test
+    public void testSetAuthenticationMethod2() {
+        loginService = new LoginService("Terry", "12345");
+        AuthenticationInterface instance = new AuthenticationEmail();
+        loginService.setAuthenticationMethod(instance);
+
+        String Input =  "5"
+                + System.getProperty("line.separator");
+        ByteArrayInputStream in = new ByteArrayInputStream(Input.getBytes());
+        System.setIn(in);
+
+
+        Boolean expResult = false;
+        Boolean result = loginService.multipleFactorAuthentication();
+
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of setAuthenticationMethod method, of class LoginService.
+     */
+    @Test
+    public void testSetAuthenticationMethod3() {
+        loginService = new LoginService("Terry", "12345");
+        AuthenticationInterface instance = new AuthenticationMobile();
+        loginService.setAuthenticationMethod(instance);
+
+        String Input =  "5"
+                + System.getProperty("line.separator");
+        ByteArrayInputStream in = new ByteArrayInputStream(Input.getBytes());
+        System.setIn(in);
+
+
+        Boolean expResult = false;
+        Boolean result = loginService.multipleFactorAuthentication();
+
+        assertEquals(expResult, result);
     }
 
     /**
@@ -61,10 +111,7 @@ public class LoginServiceTest {
      */
     @Test
     public void testLoginAttempt() throws InterruptedException {
-        AuthenticationInterface auth = new AuthenticationMobile();
-        loginService.setAuthenticationMethod(auth);
-        in = new ByteArrayInputStream("33".getBytes());
-        System.setIn(in);
+        loginService = new LoginService("Terry", "1234");
         assertFalse(loginService.loginAttempt());
     }
     
@@ -73,12 +120,7 @@ public class LoginServiceTest {
      */
     @Test
     public void testLoginAttempt2() throws InterruptedException {
-        loginService = new LoginService("Terry", "12345");
-        AuthenticationInterface auth1 = new AuthenticationApplication();
-        loginService.setAuthenticationMethod(auth1);
-        in = new ByteArrayInputStream("12".getBytes());
-        System.setIn(in);
-        System.out.println("12");
+        loginService = new LoginService("terry", "12345");
         assertFalse(loginService.loginAttempt());
     }
     
@@ -88,36 +130,6 @@ public class LoginServiceTest {
     @Test
     public void testLoginAttempt3() throws InterruptedException {
         loginService = new LoginService("Terry", "12345");
-        AuthenticationInterface auth2 = new AuthenticationEmail();
-        loginService.setAuthenticationMethod(auth2);
-        in = new ByteArrayInputStream("G-223".getBytes());
-        System.setIn(in);
-        assertFalse(loginService.loginAttempt());
-    }
-    
-    /**
-     * Test of loginAttempt method, of class LoginService.
-     */
-    @Test
-    public void testLoginAttempt4() throws InterruptedException {
-        loginService = new LoginService("", "12345");
-        AuthenticationInterface auth = new AuthenticationEmail();
-        loginService.setAuthenticationMethod(auth);
-        in = new ByteArrayInputStream("33".getBytes());
-        System.setIn(in);
-        assertFalse(loginService.loginAttempt());
-    }
-    
-    /**
-     * Test of loginAttempt method, of class LoginService.
-     */
-    @Test
-    public void testLoginAttempt5() throws InterruptedException {
-        loginService = new LoginService("", "12345");
-        AuthenticationInterface auth = new AuthenticationEmail();
-        loginService.setAuthenticationMethod(auth);
-        in = new ByteArrayInputStream("33".getBytes());
-        System.setIn(in);
-        assertFalse(loginService.loginAttempt());
+        assertTrue(loginService.loginAttempt());
     }
 }

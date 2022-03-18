@@ -42,12 +42,6 @@ public class AuthenticationEmailTest {
         Boolean expResult = false;
         Boolean result = instance.authenticate();
 
-
-
         assertEquals(expResult, result);
-    }
-
-    private void ByteArrayInputStream(byte[] bytes) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

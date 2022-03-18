@@ -8,6 +8,7 @@ import mfa.utils.Utility;
 
 public class LoginPage{
     private LoginService login;
+    private boolean restart = false;
 
     public void main() throws InterruptedException {
         do {
@@ -17,12 +18,26 @@ public class LoginPage{
             String password = Utility.scan("Password:");
 
             login = new LoginService(userName, password);
-            login.setLoginPage(this);
-        }while (!login.loginAttempt());
+
+            /* Check the response from the service and invoke
+             * the multiple factor if the initial authentication
+             *  of the credentials were valid
+             */
+            if(login.loginAttempt()){
+                userChooseAuthenticationMethod();
+                if(login.multipleFactorAuthentication())
+                    restart = false;
+                else
+                    restart = true;
+            }
+            else
+                restart = true;
+
+        }while (restart);
     }
 
     // Ask the user which method of authentication he wants to use
-    public void userChooseAuthenticationMethod(){
+    private void userChooseAuthenticationMethod(){
         String authMethod = Utility.scan("Please, Select An Authentication Method:\n" +
                 "1 - Mobile \n" +
                 "2 - Email \n" +

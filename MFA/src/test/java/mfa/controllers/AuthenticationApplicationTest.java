@@ -44,8 +44,4 @@ public class AuthenticationApplicationTest {
 
         assertEquals(expResult, result);
     }
-
-    private void ByteArrayInputStream(byte[] bytes) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }
