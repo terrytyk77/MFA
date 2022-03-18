@@ -4,6 +4,9 @@
  */
 package mfa.views;
 
+import java.io.ByteArrayInputStream;
+import mfa.controllers.AuthenticationMobile;
+import mfa.controllers.LoginService;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -13,9 +16,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  *
- * @author Darkness
+ * @author Terry Keyrouz
  */
 public class LoginPageTest {
+    private LoginService loginService;
     
     public LoginPageTest() {
     }
@@ -40,10 +44,18 @@ public class LoginPageTest {
      * Test of main method, of class LoginPage.
      */
     @Test
-    public void testMain() throws Exception {
-        System.out.println("main");
-        LoginPage instance = new LoginPage();
-        instance.main();
+    public void testMain(){
+        String Input =  "Terry"
+                        + System.getProperty("line.separator")
+                        + "12345"
+                        + System.getProperty("line.separator")
+                        + "1"
+                        + System.getProperty("line.separator")
+                        + "5"
+                        + System.getProperty("line.separator");
+        ByteArrayInputStream in = new ByteArrayInputStream(Input.getBytes());
+        System.setIn(in);
+        //instance.main();
     }
     
 }

@@ -107,14 +107,14 @@
     </Interface>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
-    <UseRelation name="" source="mfa.controllers.LoginService" target="mfa.controllers.AuthenticationInterface" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="mfa.models.DataManager" target="mfa.models.DataManager" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="INSTANCE" source="mfa.models.DataManager" target="mfa.models.DataManager" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="authenticationMethod" source="mfa.controllers.LoginService" target="mfa.controllers.AuthenticationInterface" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
     <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="mfa.controllers.AuthenticationEmail" target="mfa.controllers.AuthenticationInterface"/>
-    <HasRelation name="login" source="mfa.views.LoginPage" target="mfa.controllers.LoginService" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="dataManager" source="mfa.controllers.LoginService" target="mfa.models.DataManager" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="mfa.controllers.AuthenticationMobile" target="mfa.controllers.AuthenticationInterface"/>
     <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="mfa.controllers.AuthenticationApplication" target="mfa.controllers.AuthenticationInterface"/>
+    <HasRelation name="login" source="mfa.views.LoginPage" target="mfa.controllers.LoginService" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="INSTANCE" source="mfa.models.DataManager" target="mfa.models.DataManager" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="dataManager" source="mfa.controllers.LoginService" target="mfa.models.DataManager" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="mfa.controllers.LoginService" target="mfa.controllers.AuthenticationInterface" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="authenticationMethod" source="mfa.controllers.LoginService" target="mfa.controllers.AuthenticationInterface" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="mfa.models.DataManager" target="mfa.models.DataManager" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="mfa.controllers.AuthenticationMobile" target="mfa.controllers.AuthenticationInterface"/>
   </ClassDiagramRelations>
 </ClassDiagram>
