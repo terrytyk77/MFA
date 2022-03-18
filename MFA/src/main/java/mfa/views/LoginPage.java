@@ -17,8 +17,12 @@ public class LoginPage{
             String password = Utility.scan("Password:");
 
             login = new LoginService(userName, password);
-            userChooseAuthenticationMethod();
+            login.setLoginPage(this);
         }while (!login.loginAttempt());
+    }
+
+    public void AuthenticationUI(){
+        userChooseAuthenticationMethod();
     }
 
     // Ask the user which method of authentication he wants to use
