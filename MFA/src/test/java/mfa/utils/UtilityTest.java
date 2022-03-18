@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit5TestClass.java to edit this template
- */
+
 package mfa.utils;
 
 import java.io.ByteArrayInputStream;
@@ -19,7 +16,6 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author Terry Keyrouz
  */
 public class UtilityTest {
-    private ByteArrayInputStream in;
     private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
     
     public UtilityTest() {
@@ -48,7 +44,7 @@ public class UtilityTest {
      */
     @Test
     public void testScan() {
-        in = new ByteArrayInputStream("Terry".getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream("Terry".getBytes());
         System.setIn(in);
         String result = Utility.scan("What is your name?");
 

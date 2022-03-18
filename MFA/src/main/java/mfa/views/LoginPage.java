@@ -8,9 +8,9 @@ import mfa.utils.Utility;
 
 public class LoginPage{
     private LoginService login;
-    private boolean restart = false;
 
     public void main() throws InterruptedException {
+        boolean restart;
         do {
             // Output -- Starting the application and grabbing the inputs of the user
             Utility.println("\n#~#~#~# Welcome to Bradford IT! #~#~#~#");
@@ -25,10 +25,7 @@ public class LoginPage{
              */
             if(login.loginAttempt()){
                 userChooseAuthenticationMethod();
-                if(login.multipleFactorAuthentication())
-                    restart = false;
-                else
-                    restart = true;
+                restart = !login.multipleFactorAuthentication();
             }
             else
                 restart = true;
@@ -54,13 +51,9 @@ public class LoginPage{
                 login.setAuthenticationMethod(new AuthenticationApplication());
                 break;
             default:
-                login.setAuthenticationMethod(null);
+                Utility.println("Option Unavailable! \n");
+                userChooseAuthenticationMethod();
                 break;
-        }
-
-        if(login.getAuthenticationMethod() == null){
-            Utility.println("Option Unavailable! \n");
-            userChooseAuthenticationMethod();
         }
     }
 }
