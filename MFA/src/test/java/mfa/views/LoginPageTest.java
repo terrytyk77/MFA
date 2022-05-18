@@ -2,6 +2,7 @@
 package mfa.views;
 
 import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -38,15 +39,22 @@ public class LoginPageTest {
      */
     @Test
     public void testMain() {
+        InputStream sysInBackup = System.in; // backup System.in to restore it later
         String Input =  "Terry"
-                        + System.getProperty("line.separator")
-                        + "12345"
-                        + System.getProperty("line.separator")
-                        + "1"
-                        + System.getProperty("line.separator")
-                        + "5"
-                        + System.getProperty("line.separator");
+                + System.getProperty("line.separator")
+                + "12345"
+                + System.getProperty("line.separator")
+                + "1"
+                + System.getProperty("line.separator")
+                + "5"
+                + System.getProperty("line.separator");
         ByteArrayInputStream in = new ByteArrayInputStream(Input.getBytes());
         System.setIn(in);
+
+        // do your thing
+
+        // optionally, reset System.in to its original
+        System.setIn(sysInBackup);
+
     }
 }

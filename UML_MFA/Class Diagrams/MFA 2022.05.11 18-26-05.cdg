@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="MFA">
+  <ClassDiagramComponents>
+    <Class name="AuthenticationApplication" package="mfa.controllers" visibility="public" xPosition="1029.0" yPosition="789.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="authenticate" returnType="Boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="AuthenticationEmail" package="mfa.controllers" visibility="public" xPosition="1238.0" yPosition="789.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="authenticate" returnType="Boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="AuthenticationMobile" package="mfa.controllers" visibility="public" xPosition="1410.0" yPosition="789.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="authenticate" returnType="Boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="LoginService" package="mfa.controllers" visibility="public" xPosition="724.0" yPosition="356.0">
+      <Fields>
+        <Field name="dataManager" type="DataManager" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getAuthenticationStrings" returnType="HashMap&lt;AuthenticationMethod, String&gt;" visibility="public"/>
+        <Method name="loginAttempt" returnType="Tuple&lt;Boolean, String&gt;" visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="password"/>
+        </Method>
+        <Method name="multipleFactorAuthentication" returnType="Tuple&lt;Boolean, String&gt;" visibility="public">
+          <Argument type="AuthenticationMethod" name="mfaAuthentication"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Main" package="mfa" visibility="public" xPosition="395.0" yPosition="22.0">
+      <Fields>
+        <Field name="gui" type="GUI" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="DataManager" package="mfa.models" visibility="public" isFinal="true" xPosition="747.0" yPosition="22.0">
+      <Fields>
+        <Field name="loginInfo" type="HashMap&lt;String, String&gt;" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="authenticationMethods" type="HashMap&lt;AuthenticationMethod, AuthenticationInterface&gt;" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="authenticationStrings" type="HashMap&lt;AuthenticationMethod, String&gt;" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="INSTANCE" type="DataManager" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="getInstance" returnType="DataManager" visibility="public" isStatic="true"/>
+        <Method name="getUser" returnType="boolean" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="confirmUserPassword" returnType="boolean" visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="password"/>
+        </Method>
+        <Method name="getAuthenticationMethod" returnType="AuthenticationInterface" visibility="public">
+          <Argument type="AuthenticationMethod" name="method"/>
+        </Method>
+        <Method name="getAuthenticationStrings" returnType="HashMap&lt;AuthenticationMethod, String&gt;" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Tuple" package="mfa.utils" visibility="public" xPosition="1390.0" yPosition="356.0">
+      <Fields>
+        <Field name="first" type="T1" visibility="private"/>
+        <Field name="second" type="T2" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="T1" name="first"/>
+          <Argument type="T2" name="second"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getFirst" returnType="T1" visibility="public"/>
+        <Method name="getSecond" returnType="T2" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Utility" package="mfa.utils" visibility="public" xPosition="20.0" yPosition="22.0">
+      <Fields>
+        <Field name="scanner" type="Scanner" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="scan" returnType="String" visibility="public" isStatic="true">
+          <Argument type="String" name="message"/>
+        </Method>
+        <Method name="println" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="message"/>
+        </Method>
+        <Method name="sendCode" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="fileName"/>
+          <Argument type="String" name="content"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ApplicationLayout" package="mfa.views" visibility="public" xPosition="695.0" yPosition="675.0">
+      <Fields>
+        <Field name="contentPanel" type="JPanel" visibility="private"/>
+        <Field name="buttonLogout" type="JButton" visibility="private"/>
+        <Field name="message" type="JLabel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="GUI" name="gui"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="logout" returnType="void" visibility="private">
+          <Argument type="GUI" name="gui"/>
+        </Method>
+        <Method name="setWelcomeMessage" returnType="void" visibility="public">
+          <Argument type="String" name="username"/>
+        </Method>
+        <Method name="getPanel" returnType="JPanel" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="AuthenticationLayout" package="mfa.views" visibility="public" xPosition="353.0" yPosition="675.0">
+      <Fields>
+        <Field name="contentPanel" type="JPanel" visibility="private"/>
+        <Field name="buttonConfirm" type="JButton" visibility="private"/>
+        <Field name="buttonBack" type="JButton" visibility="private"/>
+        <Field name="mfaDropDown" type="JComboBox&lt;String&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="GUI" name="gui"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="generateAuthenticationOptions" returnType="void" visibility="private">
+          <Argument type="GUI" name="gui"/>
+        </Method>
+        <Method name="authenticationAttempt" returnType="void" visibility="private">
+          <Argument type="GUI" name="gui"/>
+        </Method>
+        <Method name="backToLogin" returnType="void" visibility="private">
+          <Argument type="GUI" name="gui"/>
+        </Method>
+        <Method name="resetSelectedIndex" returnType="void" visibility="public"/>
+        <Method name="getPanel" returnType="JPanel" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="GUI" package="mfa.views" visibility="public" xPosition="359.0" yPosition="254.0">
+      <Fields>
+        <Field name="applicationFrame" type="JFrame" visibility="protected"/>
+        <Field name="login" type="LoginService" visibility="protected"/>
+        <Field name="username" type="String" visibility="protected"/>
+        <Field name="loginPanel" type="JPanel" visibility="protected"/>
+        <Field name="appPanel" type="JPanel" visibility="protected"/>
+        <Field name="authenticationPanel" type="JPanel" visibility="protected"/>
+        <Field name="loginLayout" type="LoginLayout" visibility="protected"/>
+        <Field name="authenticationLayout" type="AuthenticationLayout" visibility="protected"/>
+        <Field name="applicationLayout" type="ApplicationLayout" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="setLoginPanel" returnType="void" visibility="protected">
+          <Argument type="JPanel" name="panel"/>
+        </Method>
+        <Method name="setAppPanel" returnType="void" visibility="protected">
+          <Argument type="JPanel" name="panel"/>
+        </Method>
+        <Method name="setAuthenticationPanel" returnType="void" visibility="protected">
+          <Argument type="JPanel" name="panel"/>
+        </Method>
+        <Method name="replacePanel" returnType="void" visibility="protected">
+          <Argument type="JPanel" name="panel"/>
+        </Method>
+        <Method name="start" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="LinuxGUI" package="mfa.views" visibility="public" xPosition="20.0" yPosition="377.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="start" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="LoginLayout" package="mfa.views" visibility="public" xPosition="20.0" yPosition="675.0">
+      <Fields>
+        <Field name="contentPanel" type="JPanel" visibility="private"/>
+        <Field name="buttonLogin" type="JButton" visibility="private"/>
+        <Field name="buttonReset" type="JButton" visibility="private"/>
+        <Field name="usernameTextField" type="JTextField" visibility="private"/>
+        <Field name="passwordPasswordField" type="JPasswordField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="GUI" name="gui"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="loginAttempt" returnType="void" visibility="private">
+          <Argument type="GUI" name="gui"/>
+        </Method>
+        <Method name="resetFields" returnType="void" visibility="public"/>
+        <Method name="getPanel" returnType="JPanel" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="MacGUI" package="mfa.views" visibility="public" xPosition="20.0" yPosition="501.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="start" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="WindowsGUI" package="mfa.views" visibility="public" xPosition="20.0" yPosition="254.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="start" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="AuthenticationInterface" package="mfa.controllers" visibility="public" xPosition="1231.0" yPosition="620.0">
+      <Methods>
+        <Method name="authenticate" returnType="Boolean" visibility="package"/>
+      </Methods>
+    </Interface>
+    <Enum name="AuthenticationMethod" package="mfa.enums" visibility="public" xPosition="1390.0" yPosition="94.0">
+      <Literals>
+        <Literal name="EMAIL"/>
+        <Literal name="MOBILE"/>
+        <Literal name="APPLICATION"/>
+      </Literals>
+    </Enum>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="applicationLayout" source="mfa.views.GUI" target="mfa.views.ApplicationLayout" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="authenticationStrings" source="mfa.models.DataManager" target="mfa.enums.AuthenticationMethod" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="HashMap&lt;AuthenticationMethod, String&gt;"/>
+    <HasRelation name="authenticationLayout" source="mfa.views.GUI" target="mfa.views.AuthenticationLayout" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="mfa.views.WindowsGUI" target="mfa.views.GUI"/>
+    <IsRelation name="is" source="mfa.views.LinuxGUI" target="mfa.views.GUI"/>
+    <UseRelation source="mfa.views.ApplicationLayout" target="mfa.views.GUI" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="mfa.controllers.LoginService" target="mfa.enums.AuthenticationMethod" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="mfa.controllers.AuthenticationEmail" target="mfa.controllers.AuthenticationInterface"/>
+    <HasRelation name="gui" source="mfa.Main" target="mfa.views.GUI" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="INSTANCE" source="mfa.models.DataManager" target="mfa.models.DataManager" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="mfa.controllers.AuthenticationApplication" target="mfa.controllers.AuthenticationInterface"/>
+    <UseRelation source="mfa.models.DataManager" target="mfa.enums.AuthenticationMethod" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="dataManager" source="mfa.controllers.LoginService" target="mfa.models.DataManager" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="mfa.models.DataManager" target="mfa.models.DataManager" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="MultipleFactorAuthentication" source="mfa.controllers.LoginService" target="mfa.controllers.AuthenticationInterface" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="login" source="mfa.views.GUI" target="mfa.controllers.LoginService" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="mfa.controllers.LoginService" target="mfa.utils.Tuple" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="mfa.views.LoginLayout" target="mfa.views.GUI" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="authenticationMethods" source="mfa.models.DataManager" target="mfa.enums.AuthenticationMethod" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="HashMap&lt;AuthenticationMethod, AuthenticationInterface&gt;"/>
+    <UseRelation source="mfa.views.AuthenticationLayout" target="mfa.views.GUI" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="mfa.controllers.AuthenticationMobile" target="mfa.controllers.AuthenticationInterface"/>
+    <IsRelation name="is" source="mfa.views.MacGUI" target="mfa.views.GUI"/>
+    <HasRelation name="loginLayout" source="mfa.views.GUI" target="mfa.views.LoginLayout" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
