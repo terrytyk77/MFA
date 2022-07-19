@@ -51,6 +51,7 @@ public class GUI {
         applicationFrame.setMinimumSize(new Dimension(400, 150));
         applicationFrame.add(loginPanel, BorderLayout.CENTER);
         applicationFrame.setTitle("IT Services - University of Bradford");
+        applicationFrame.setLocationRelativeTo(null);
         applicationFrame.setVisible(true);
-    };
+    }
 }
