@@ -9,8 +9,5 @@
         <module name="MFA" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="MFA" target="10" />
-    </bytecodeTargetLevel>
   </component>
 </project>
