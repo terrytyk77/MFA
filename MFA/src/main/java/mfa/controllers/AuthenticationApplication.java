@@ -1,6 +1,6 @@
 package mfa.controllers;
 
-import mfa.utils.Utility;
+import javax.swing.*;
 import java.util.Random;
 
 public class AuthenticationApplication implements AuthenticationInterface {
@@ -15,14 +15,7 @@ public class AuthenticationApplication implements AuthenticationInterface {
         int result = randomNumber1 + randomNumber2;
 
         // Compare the result with the user input
-        String confirmation = Utility.scan("Please, calculate: " + randomNumber1 + " + " + randomNumber2 + " to confirm it's you");
-
-        if(String.valueOf(result).equals(confirmation)){
-            Utility.println("Authenticated by Application Successful!");
-            return true;
-        }
-
-        Utility.println("Authenticated by Application Failed!");
-        return false;
+        String response = JOptionPane.showInputDialog("Please, calculate "  + randomNumber1 + " + " + randomNumber2 + " to confirm it's you!").trim();
+        return response.equals(String.valueOf(result));
     }
 }

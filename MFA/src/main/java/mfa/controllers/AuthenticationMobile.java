@@ -1,21 +1,20 @@
 package mfa.controllers;
 
 import mfa.utils.Utility;
+
+import javax.swing.*;
 import java.util.Random;
 
 public class AuthenticationMobile implements AuthenticationInterface {
 
     @Override
     public Boolean authenticate() {
-        int randomNumber = new Random().nextInt(100);
-        String confirmation = Utility.scan("Please, write down " + randomNumber + " to confirm it's you");
+        int result = new Random().nextInt(100);
 
-        if(String.valueOf(randomNumber).equals(confirmation)){
-            Utility.println("Authenticated by Mobile Successful!");
-            return true;
-        }
+        // Send the code to a text file
+        Utility.sendCode("Mobile_Authentication.txt", "Your Code is: " + result);
 
-        Utility.println("Authenticated by Mobile Failed!");
-        return false;
+        String response = JOptionPane.showInputDialog("A code has been sent to your mobile! Insert it below").trim();
+        return response.equals(String.valueOf(result));
     }
 }
