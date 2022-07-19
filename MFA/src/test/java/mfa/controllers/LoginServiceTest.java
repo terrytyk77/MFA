@@ -1,135 +1,62 @@
 package mfa.controllers;
 
-import java.io.ByteArrayInputStream;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeEach;
+
+import java.util.HashMap;
+
+import mfa.enums.AuthenticationMethod;
+import mfa.utils.Tuple;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
  *
- * @author Terry Keyrouz   
+ * @author Terry Keyrouz
  */
 public class LoginServiceTest {
-    private LoginService loginService;
-    
-    public LoginServiceTest() {
-    }
-    
+    private static LoginService loginService;
+
     @BeforeAll
     public static void setUpClass() {
-    }
-    
-    @AfterAll
-    public static void tearDownClass() {
-    }
-    
-    @BeforeEach
-    public void setUp() {
-    }
-    
-    @AfterEach
-    public void tearDown() {
+        loginService = new LoginService();
     }
 
     /**
-     * Test of getAuthenticationMethod method, of class LoginService.
+     * Test of getAuthenticationStrings method, of class LoginService.
      */
     @Test
-    public void testGetAuthenticationMethod() {
-        loginService = new LoginService("Terry", "12345");
-        assertNull(loginService.getAuthenticationMethod());
+    public void getAuthenticationStringsTest(){
+        HashMap<AuthenticationMethod, String> authenticationStrings = new HashMap<>();
+
+        // Populating the auth messages
+        authenticationStrings.put(AuthenticationMethod.EMAIL, "Email");
+        authenticationStrings.put(AuthenticationMethod.MOBILE, "Mobile");
+        authenticationStrings.put(AuthenticationMethod.APPLICATION, "Application");
+
+       assertEquals(loginService.getAuthenticationStrings(), authenticationStrings);
     }
 
     /**
      * Test of setAuthenticationMethod method, of class LoginService.
      */
-    @Test
-    public void testSetAuthenticationMethod1() {
-        loginService = new LoginService("Terry", "12345");
-        AuthenticationInterface instance = new AuthenticationMobile();
-        loginService.setAuthenticationMethod(instance);
-
-        String Input =  "5"
-                        + System.getProperty("line.separator");
-        ByteArrayInputStream in = new ByteArrayInputStream(Input.getBytes());
-        System.setIn(in);
-
-
-        Boolean expResult = false;
-        Boolean result = loginService.multipleFactorAuthentication();
-
-        assertEquals(expResult, result);
-    }
-
-    /**
-     * Test of setAuthenticationMethod method, of class LoginService.
-     */
-    @Test
-    public void testSetAuthenticationMethod2() {
-        loginService = new LoginService("Terry", "12345");
-        AuthenticationInterface instance = new AuthenticationEmail();
-        loginService.setAuthenticationMethod(instance);
-
-        String Input =  "5"
-                + System.getProperty("line.separator");
-        ByteArrayInputStream in = new ByteArrayInputStream(Input.getBytes());
-        System.setIn(in);
-
-
-        Boolean expResult = false;
-        Boolean result = loginService.multipleFactorAuthentication();
-
-        assertEquals(expResult, result);
-    }
-
-    /**
-     * Test of setAuthenticationMethod method, of class LoginService.
-     */
-    @Test
-    public void testSetAuthenticationMethod3() {
-        loginService = new LoginService("Terry", "12345");
-        AuthenticationInterface instance = new AuthenticationMobile();
-        loginService.setAuthenticationMethod(instance);
-
-        String Input =  "5"
-                + System.getProperty("line.separator");
-        ByteArrayInputStream in = new ByteArrayInputStream(Input.getBytes());
-        System.setIn(in);
-
-
-        Boolean expResult = false;
-        Boolean result = loginService.multipleFactorAuthentication();
-
-        assertEquals(expResult, result);
-    }
+    // Commented out for the mutation testing!
+//    @Test
+//    public void testSetAuthenticationMethod1() {
+//        assertEquals(loginService.multipleFactorAuthentication(AuthenticationMethod.EMAIL) , false);
+//        assertEquals(loginService.multipleFactorAuthentication(AuthenticationMethod.MOBILE) , false);
+//        assertEquals(loginService.multipleFactorAuthentication(AuthenticationMethod.APPLICATION) , false);
+//    }
 
     /**
      * Test of loginAttempt method, of class LoginService.
      */
-    @Test
-    public void testLoginAttempt() throws InterruptedException {
-        loginService = new LoginService("Terry", "1234");
-        assertFalse(loginService.loginAttempt());
-    }
-    
-    /**
-     * Test of loginAttempt method, of class LoginService.
-     */
-    @Test
-    public void testLoginAttempt2() throws InterruptedException {
-        loginService = new LoginService("terry", "12345");
-        assertFalse(loginService.loginAttempt());
-    }
-    
-//    /**
-//     * Test of loginAttempt method, of class LoginService.
-//     */
-    @Test
-    public void testLoginAttempt3() throws InterruptedException {
-        loginService = new LoginService("Terry", "12345");
-        assertTrue(loginService.loginAttempt());
+    @ParameterizedTest
+    @CsvSource({"Terry, 12345, true", "Tom, 12345, false", " No, No, false", "Ali, Apple13, false"})
+    public void testLoginAttempt(String name, String password, boolean expectedResult){
+        Tuple<Boolean, String> response = loginService.loginAttempt(name, password);
+        assertEquals(response.getFirst(), expectedResult);
     }
 }

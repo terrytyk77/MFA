@@ -1,12 +1,13 @@
 
 package mfa.models;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.BeforeAll;
+import mfa.controllers.AuthenticationInterface;
+import mfa.enums.AuthenticationMethod;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+
+import java.util.HashMap;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -17,26 +18,23 @@ import static org.junit.jupiter.api.Assertions.*;
 public class DataManagerTest {
     
     private final DataManager instance;
+    private final AuthenticationInterface EmailAuth;
+    private final AuthenticationInterface MobileAuth;
+    private final AuthenticationInterface ApplicationAuth;
+    private static final HashMap<AuthenticationMethod, String> authenticationStrings = new HashMap<>();
     
-    public DataManagerTest() {
+    public DataManagerTest(){
         instance = DataManager.getInstance();
+        EmailAuth = instance.getAuthenticationMethod(AuthenticationMethod.EMAIL);
+        MobileAuth = instance.getAuthenticationMethod(AuthenticationMethod.MOBILE);
+        ApplicationAuth = instance.getAuthenticationMethod(AuthenticationMethod.APPLICATION);
+
+        // Populating the auth messages
+        authenticationStrings.put(AuthenticationMethod.EMAIL, "Email");
+        authenticationStrings.put(AuthenticationMethod.MOBILE, "Mobile");
+        authenticationStrings.put(AuthenticationMethod.APPLICATION, "Application");
     }
-    
-    @BeforeAll
-    public static void setUpClass() {
-    }
-    
-    @AfterAll
-    public static void tearDownClass() {
-    }
-    
-    @BeforeEach
-    public void setUp() {
-    }
-    
-    @AfterEach
-    public void tearDown() {
-    }
+
 
     /**
      * Test of getUser method, of class DataManager.
@@ -56,5 +54,25 @@ public class DataManagerTest {
     public void testConfirmUserPassword(String name, String password, boolean expectedResult) {
         boolean result = instance.confirmUserPassword(name, password);
         assertEquals(expectedResult, result);
+    }
+
+    /**
+     * Test of getAuthenticationMethod method, of class DataManager.
+     */
+    @Test
+    public void getAuthenticationMethod() {
+        assertEquals(instance.getAuthenticationMethod(AuthenticationMethod.EMAIL), EmailAuth);
+        assertEquals(instance.getAuthenticationMethod(AuthenticationMethod.MOBILE), MobileAuth);
+        assertEquals(instance.getAuthenticationMethod(AuthenticationMethod.APPLICATION), ApplicationAuth);
+        assertNotNull(instance.getAuthenticationMethod(AuthenticationMethod.EMAIL));
+        assertNull(instance.getAuthenticationMethod(null));
+    }
+
+    /**
+     * Test of getAuthenticationStrings method, of class DataManager.
+     */
+    @Test
+    public void getAuthenticationStrings() {
+        assertEquals(instance.getAuthenticationStrings(), authenticationStrings);
     }
 }

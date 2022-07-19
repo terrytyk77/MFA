@@ -1,57 +1,48 @@
 package mfa.controllers;
 
+import mfa.enums.AuthenticationMethod;
 import mfa.models.DataManager;
-import mfa.utils.Utility;
-import java.util.concurrent.TimeUnit;
+import mfa.utils.Tuple;
+
+import java.util.HashMap;
 
 public class LoginService {
     private final DataManager dataManager;
-    private final String name;
-    private final String password;
-    private AuthenticationInterface authenticationMethod;
 
-    public LoginService(String name, String password){
-        this.name = name;
-        this.password = password;
-        this.authenticationMethod = null;
+    public LoginService(){
         this.dataManager = DataManager.getInstance();
     }
 
-    public AuthenticationInterface getAuthenticationMethod(){
-        return this.authenticationMethod;
+    public HashMap<AuthenticationMethod, String> getAuthenticationStrings(){
+        return dataManager.getAuthenticationStrings();
     }
 
-    public void setAuthenticationMethod(AuthenticationInterface mfaAuthentication){
-        this.authenticationMethod = mfaAuthentication;
-    }
-
-    /* Attempt to log in if succeed it will call the authenticate method
-     from the chosen authenticationMethod chosen by the user, by calling
-     it's implemented interface
+    /* attemptToLogIn, send multiple responds to the front-end
+     * depending on if it succeeds or not.
+     * The response is in tuple indicating <Success status, Error Message>
      */
-    public boolean loginAttempt() throws InterruptedException {
-        Utility.println("Authenticating...");
-        //Simulate Network Delay
-        TimeUnit.SECONDS.sleep(1);
-        if(this.dataManager.getUser(this.name)){
-            if(this.dataManager.confirmUserPassword(this.name, this.password))
-                return true;
-            else
-                Utility.println("Wrong Password!");
-        }
-        else{
-            Utility.println("Wrong Username!");
-        }
-        return false;
+    public Tuple<Boolean, String> loginAttempt(String name, String password){
+        if(!this.dataManager.getUser(name))
+            return new Tuple<>(false, "Wrong Username!");
+
+        if(this.dataManager.confirmUserPassword(name, password))
+            return new Tuple<>(true, "Login Successful!");
+        else
+            return new Tuple<>(false, "Wrong Password!");
     }
 
-    public boolean multipleFactorAuthentication(){
-        if(this.authenticationMethod.authenticate()) {
-            Utility.println(this.name + " Logged in Successfully!");
-            return true;
-        }
-
-        Utility.println("Login Denied!");
-        return false;
+    /* multipleFactorAuthentication, send multiple responds to the front-end
+     * depending on if it succeeds to communicate with the interface that implements
+     * the authentication method and gets validated.
+     * The response is in tuple indicating <Success status, Error Message>
+     */
+    public Tuple<Boolean, String> multipleFactorAuthentication(AuthenticationMethod mfaAuthentication){
+        AuthenticationInterface authenticationMethod = dataManager.getAuthenticationMethod(mfaAuthentication);
+        assert authenticationMethod != null;
+        boolean authenticateResponse = authenticationMethod.authenticate();
+        if(authenticateResponse)
+            return new Tuple<>(true, "Authenticate Successful!");
+        else
+            return new Tuple<>(false, "Access Denied!");
     }
 }

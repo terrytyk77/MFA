@@ -1,6 +1,8 @@
 package mfa.controllers;
 
 import mfa.utils.Utility;
+
+import javax.swing.*;
 import java.util.Random;
 
 public class AuthenticationEmail implements AuthenticationInterface {
@@ -15,14 +17,7 @@ public class AuthenticationEmail implements AuthenticationInterface {
         Utility.sendCode("Email_Authentication.txt", "Your Code is: " + result);
 
         // Compare the G-code with the user input
-        String confirmation = Utility.scan("Please, write down the security code that was sent to your email confirm it's you");
-
-        if(result.equals(confirmation)){
-            Utility.println("Authenticated by Email Successful!");
-            return true;
-        }
-
-        Utility.println("Authenticated by Email Failed!");
-        return false;
+        String response = JOptionPane.showInputDialog("A code has been sent to your email! Insert it below").trim();
+        return response.equals(result);
     }
 }

@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="93d38020-65ce-4cda-84e8-903ae370a1c7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_23_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_6_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_6_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_6_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_6_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_6_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MFA.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/mfa/MainTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/mfa/enums/AuthenticationMethodTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/mfa/utils/TupleTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/mfa/views/ApplicationLayoutTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/mfa/views/AuthenticationLayoutTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/mfa/views/GUITest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/mfa/views/LoginLayoutTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.idea/src.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Email_Authentication.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mobile_Authentication.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mfa/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mfa/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mfa/controllers/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mfa/controllers/LoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mfa/utils/Tuple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mfa/utils/Tuple.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mfa/views/ApplicationLayout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mfa/views/ApplicationLayout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mfa/views/AuthenticationLayout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mfa/views/AuthenticationLayout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mfa/views/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mfa/views/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mfa/views/LoginLayout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mfa/views/LoginLayout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mfa/views/WindowsGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mfa/views/WindowsGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/mfa/controllers/AuthenticationApplicationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mfa/controllers/AuthenticationApplicationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/mfa/controllers/AuthenticationEmailTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mfa/controllers/AuthenticationEmailTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/mfa/controllers/AuthenticationMobileTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mfa/controllers/AuthenticationMobileTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/mfa/controllers/LoginServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mfa/controllers/LoginServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/mfa/models/DataManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mfa/models/DataManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/mfa/utils/UtilityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mfa/utils/UtilityTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/mfa/views/LoginPageTest.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageOptionsProvider">
+    <option name="myAddOrReplace" value="0" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/pom.xml" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="26TbYNcT4VuHA4sC9JKzjEfHnQT" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../MFA/MFA" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Darkness\Desktop\IADE\3rd_Year\2nd_Semester\Software_ Systems_Design\MFA2\MFA\src\test\java\mfa\views" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="mfa.utils" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="mfa.views" />
+      <recent name="mfa.enums" />
+      <recent name="mfa.models" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="mfa.Main" />
+      <module name="MFA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mfa.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in MFA" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MFA" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataManagerTest.getAuthenticationMethod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MFA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mfa.models.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="mfa.models" />
+      <option name="MAIN_CLASS_NAME" value="mfa.models.DataManagerTest" />
+      <option name="METHOD_NAME" value="getAuthenticationMethod" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainTest.MainTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MFA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mfa.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="mfa" />
+      <option name="MAIN_CLASS_NAME" value="mfa.MainTest" />
+      <option name="METHOD_NAME" value="MainTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="mfa in MFA" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MFA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mfa.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="mfa" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.DataManagerTest.getAuthenticationMethod" />
+        <item itemvalue="JUnit.mfa in MFA" />
+        <item itemvalue="JUnit.All in MFA" />
+        <item itemvalue="JUnit.MainTest.MainTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="93d38020-65ce-4cda-84e8-903ae370a1c7" name="Changes" comment="" />
+      <created>1647450572579</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1647450572579</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/MFA$LoginPageTest_testMain.ic" NAME="LoginPageTest.testMain Coverage Results" MODIFIED="1647594096242" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.views.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$LoginServiceTest_testLoginAttempt3.ic" NAME="LoginServiceTest.testLoginAttempt3 Coverage Results" MODIFIED="1647594788775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$DataManagerTest_testConfirmUserPassword2.ic" NAME="DataManagerTest.testConfirmUserPassword2 Coverage Results" MODIFIED="1647601924531" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.models.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$AuthenticationLayoutTest_settersTest.ic" NAME="AuthenticationLayoutTest.settersTest Coverage Results" MODIFIED="1652382491843" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.views.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$TupleTest_testTuples.ic" NAME="TupleTest.testTuples Coverage Results" MODIFIED="1652365329828" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.utils.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$MainTest_MainTest.ic" NAME="MainTest.MainTest Coverage Results" MODIFIED="1652386376198" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$GUITest.ic" NAME="GUITest Coverage Results" MODIFIED="1652386043318" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.views.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$DataManagerTest_testGetUser.ic" NAME="DataManagerTest.testGetUser Coverage Results" MODIFIED="1652362120188" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.models.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$LoginServiceTest_testSetAuthenticationMethod3.ic" NAME="LoginServiceTest.testSetAuthenticationMethod3 Coverage Results" MODIFIED="1647604299294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$AuthenticationMethodTest.ic" NAME="AuthenticationMethodTest Coverage Results" MODIFIED="1652385964269" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.enums.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$AuthenticationMobileTest_testAuthenticate2.ic" NAME="AuthenticationMobileTest.testAuthenticate2 Coverage Results" MODIFIED="1647583590472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$UtilityTest_testScan.ic" NAME="UtilityTest.testScan Coverage Results" MODIFIED="1647595120935" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.utils.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$AuthenticationMobileTest_testAuthenticate.ic" NAME="AuthenticationMobileTest.testAuthenticate Coverage Results" MODIFIED="1647584273658" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$DataManagerTest_testConfirmUserPassword3.ic" NAME="DataManagerTest.testConfirmUserPassword3 Coverage Results" MODIFIED="1647601930224" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.models.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$mfa_in_MFA.ic" NAME="mfa in MFA Coverage Results" MODIFIED="1652385642660" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$LoginServiceTest_testLoginAttempt2.ic" NAME="LoginServiceTest.testLoginAttempt2 Coverage Results" MODIFIED="1647594786982" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$DataManagerTest_getAuthenticationStrings.ic" NAME="DataManagerTest.getAuthenticationStrings Coverage Results" MODIFIED="1652363890327" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.models.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$DataManagerTest_testGetInstance.ic" NAME="DataManagerTest.testGetInstance Coverage Results" MODIFIED="1647584460342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.models.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$LoginServiceTest_testLoginAttempt.ic" NAME="LoginServiceTest.testLoginAttempt Coverage Results" MODIFIED="1647594785399" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$UtilityTest_testPrintln.ic" NAME="UtilityTest.testPrintln Coverage Results" MODIFIED="1647595126179" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.utils.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$LoginServiceTest_testSetAuthenticationMethod2.ic" NAME="LoginServiceTest.testSetAuthenticationMethod2 Coverage Results" MODIFIED="1647604286678" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$DataManagerTest.ic" NAME="DataManagerTest Coverage Results" MODIFIED="1652385977159" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.models.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$LoginServiceTest_getAuthenticationStringsTest.ic" NAME="LoginServiceTest.getAuthenticationStringsTest Coverage Results" MODIFIED="1652384120515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$LoginServiceTest_testSetAuthenticationMethod.ic" NAME="LoginServiceTest.testSetAuthenticationMethod Coverage Results" MODIFIED="1647594579403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$UtilityTest_testSendCode.ic" NAME="UtilityTest.testSendCode Coverage Results" MODIFIED="1647595129316" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.utils.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$LoginServiceTest_testLoginAttempt5.ic" NAME="LoginServiceTest.testLoginAttempt5 Coverage Results" MODIFIED="1647579638933" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$AuthenticationMethodTest_testAuthenticationMethodEnums.ic" NAME="AuthenticationMethodTest.testAuthenticationMethodEnums Coverage Results" MODIFIED="1652365813266" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.enums.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$DataManagerTest_getAuthenticationMethod.ic" NAME="DataManagerTest.getAuthenticationMethod Coverage Results" MODIFIED="1652404904534" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.models.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$ApplicationLayoutTest.ic" NAME="ApplicationLayoutTest Coverage Results" MODIFIED="1652386151885" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.views.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$WindowsGUITest_testSetters.ic" NAME="WindowsGUITest.testSetters Coverage Results" MODIFIED="1652372873371" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.views.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$GUITest_replacePanelTest.ic" NAME="GUITest.replacePanelTest Coverage Results" MODIFIED="1652366581246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.views.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$AuthenticationApplicationTest.ic" NAME="AuthenticationApplicationTest Coverage Results" MODIFIED="1652385808144" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$LoginLayoutTest.ic" NAME="LoginLayoutTest Coverage Results" MODIFIED="1652386052131" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.views.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$LoginServiceTest_testLoginAttempt4__1_.ic" NAME="LoginServiceTest.testLoginAttempt4 (1) Coverage Results" MODIFIED="1647579655598" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$DataManagerTest_testConfirmUserPassword.ic" NAME="DataManagerTest.testConfirmUserPassword Coverage Results" MODIFIED="1652362703861" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.models.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$LoginLayoutTest_settersTest.ic" NAME="LoginLayoutTest.settersTest Coverage Results" MODIFIED="1652381101146" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.views.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$AuthenticationEmailTest.ic" NAME="AuthenticationEmailTest Coverage Results" MODIFIED="1652385864901" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$LoginServiceTest_testSetAuthenticationMethod1.ic" NAME="LoginServiceTest.testSetAuthenticationMethod1 Coverage Results" MODIFIED="1652384397401" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$DataManagerTest_testGetUser2.ic" NAME="DataManagerTest.testGetUser2 Coverage Results" MODIFIED="1647607843126" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.models.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$WindowsGUITest_replacePanelTest.ic" NAME="WindowsGUITest.replacePanelTest Coverage Results" MODIFIED="1652376098894" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.views.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$AuthenticationApplicationTest_testAuthenticate.ic" NAME="AuthenticationApplicationTest.testAuthenticate Coverage Results" MODIFIED="1652358977266" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$LoginLayoutTest_resetFieldsTest.ic" NAME="LoginLayoutTest.resetFieldsTest Coverage Results" MODIFIED="1652381092244" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.views.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$LoginServiceTest_testGetAuthenticationMethod.ic" NAME="LoginServiceTest.testGetAuthenticationMethod Coverage Results" MODIFIED="1647594871958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$DataManagerTest_testConfirmUserPassword__1_.ic" NAME="DataManagerTest.testConfirmUserPassword (1) Coverage Results" MODIFIED="1652362695913" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.models.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$WindowsGUITest.ic" NAME="WindowsGUITest Coverage Results" MODIFIED="1652373252465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.views.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$UtilityTest.ic" NAME="UtilityTest Coverage Results" MODIFIED="1652386006440" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.utils.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$TupleTest.ic" NAME="TupleTest Coverage Results" MODIFIED="1652385994451" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.utils.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$MainTest.ic" NAME="MainTest Coverage Results" MODIFIED="1652386799202" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$UtilityTest_testSendCode2.ic" NAME="UtilityTest.testSendCode2 Coverage Results" MODIFIED="1652364783690" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.utils.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$AuthenticationLayoutTest.ic" NAME="AuthenticationLayoutTest Coverage Results" MODIFIED="1652386036315" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.views.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$DataManagerTest_testConfirmUserPassword1.ic" NAME="DataManagerTest.testConfirmUserPassword1 Coverage Results" MODIFIED="1647595162984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.models.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$DataManagerTest_testGetUser1.ic" NAME="DataManagerTest.testGetUser1 Coverage Results" MODIFIED="1647601900035" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.models.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$LoginLayoutTest_getContentPanelTest.ic" NAME="LoginLayoutTest.getContentPanelTest Coverage Results" MODIFIED="1652381097127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.views.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$AuthenticationEmailTest_testAuthenticate.ic" NAME="AuthenticationEmailTest.testAuthenticate Coverage Results" MODIFIED="1647593843634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MFA$LoginServiceTest.ic" NAME="LoginServiceTest Coverage Results" MODIFIED="1652385521155" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>mfa.controllers.*</FILTER>
+    </SUITE>
+  </component>
+</project>
